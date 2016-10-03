@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="10dp">
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="7pt"
+            android:padding="10dp"
+            android:text="He may act like he wants a secretary but most of the time they’re looking for…"
+            android:id="@+id/tv_title_favorites"
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <TextView
+            android:textColor="#d2cbcb"
+            android:id="@+id/tv_minute_favorites"
+            android:layout_marginLeft="10dp"
+            android:text="10min"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/iv_favorites"
+        android:src="@drawable/item1"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

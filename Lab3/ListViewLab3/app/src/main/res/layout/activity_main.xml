@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="vn.techkids.listviewlab3.MainActivity">
+
+    <LinearLayout
+        android:background="#969637"
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:scaleType="center"
+            android:src="@drawable/ic_list_black_24dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:textColor="#000000"
+            android:textSize="8pt"
+            android:textStyle="bold"
+            android:gravity="center|left"
+            android:text="Favorites"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView" />
+
+        <ImageView
+            android:scaleType="center"
+            android:src="@drawable/ic_search_black_24dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:scaleType="center"
+            android:src="@drawable/ic_more_vert_black_24dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_below="@id/ll_top"
+        android:id="@+id/lv_Favorites"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+</RelativeLayout>

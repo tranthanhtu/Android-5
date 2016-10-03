@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AttributeExtension">
+        <attr name="value" format="string"/>
+        <attr name="number" format="integer"/>
+    </declare-styleable>
+</resources>
