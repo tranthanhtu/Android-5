@@ -19,14 +19,15 @@ import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 import vn.techkids.session12.R;
 import vn.techkids.session12.adapters.FakeAdapter;
-import vn.techkids.session12.adapters.FlickrAdapter;
 import vn.techkids.session12.jsonmodels.FakeItems;
-import vn.techkids.session12.jsonmodels.FlickerItem;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,11 +47,32 @@ public class FakeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fake, container, false);
         lvFake = (ListView) view.findViewById(R.id.lv_fake);
-        setupUI();
+//        getData();
+//        postData();
         return view;
     }
 
-    private void setupUI() {
+//    private void postData() {
+//
+//        OkHttpClient client = new OkHttpClient();
+//
+//        RequestBody formBody = new FormBody.Builder()
+//                .add("Key", "Value")
+//                .build();
+//        Request request = new Request.Builder()
+//                .url("http://jsonplaceholder.typicode.com/posts")
+//                .post(formBody)
+//                .addHeader("Key", "Value")
+//                .build();
+//
+//        try {
+//            client.newCall(request).execute();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    private void getData() {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
@@ -68,9 +90,6 @@ public class FakeFragment extends Fragment {
                 String bodystring = response.body().string();
 
                 FakeItems[] items = new Gson().fromJson(bodystring, FakeItems[].class);
-
-
-
 
                 FakeFragment.this.updateBody(items);
             }

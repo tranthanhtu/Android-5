@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -24,6 +25,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import vn.techkids.session12.fragments.FakeFragment;
 import vn.techkids.session12.fragments.FlickrFragment;
+import vn.techkids.session12.fragments.PostFragment;
 import vn.techkids.session12.jsonmodels.FlickerItem;
 import vn.techkids.session12.jsonmodels.FlickrFeed;
 
@@ -39,12 +41,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        ButterKnife.bind(this);
 //        changeFragment(new FlickrFragment(), false);
         fragment.add("FakeFragment");
         fragment.add("FlickrFragment");
+        fragment.add("PostFragment");
         lvhome = (ListView) findViewById(R.id.lv_home);
         setAdapter(true);
         onListener();
+//        changeFragment(new PostFragment(), false);
     }
 
 
@@ -61,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(new FlickrFragment(), true);
                     setAdapter(false);
                 }
+                else if (position == 2){
+                    changeFragment(new PostFragment(), true);
+                    setAdapter(false);
+                }
+
             }
         });
     }
@@ -75,9 +85,11 @@ public class MainActivity extends AppCompatActivity {
         if (visible){
             ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,fragment);
             lvhome.setAdapter(adapter);
+            lvhome.setVisibility(View.VISIBLE);
         }else {
-            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,nul);
+            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, nul);
             lvhome.setAdapter(adapter);
+            lvhome.setVisibility(View.GONE);
         }
 
 
