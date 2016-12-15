@@ -115,13 +115,13 @@ public class Weather extends AppCompatActivity implements WeatherServiceCallback
 
         iconWeather.setImageDrawable(weatherIconDrawable);
 
-        temperatureF.setText(item.getCondition().getTemperature() + " "  + channel.getUnits().getTemperator());
+        temperatureF.setText(item.getCondition().getTemperature() + "°"  + channel.getUnits().getTemperator());
 
         float c ;
 
         c = (item.getCondition().getTemperature() - 32) / 1.8f;
 
-        temperatureC.setText(c + " C");
+        temperatureC.setText(c + "°C");
 
         condition.setText(item.getCondition().getDescription());
 
